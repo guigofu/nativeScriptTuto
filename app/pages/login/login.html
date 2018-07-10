@@ -1,0 +1,13 @@
+<GridLayout rows="150, auto, auto, auto, auto">  
+  <Image src="res://logo_login" row="0" [visibility]="isLoading ? 'collapsed' : 'visible'" stretch="none" horizontalAlignment="center" verticalAlignment="center"></Image>
+  <ActivityIndicator [busy]="isLoading" row="0" [visibility]="isLoading ? 'visible' : 'collapse'" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+
+  <TextField [(ngModel)]="user.email" row="1" hint="Email Address" keyboardType="email"
+  autocorrect="false" autocapitalizationType="none"
+  ></TextField>
+  <TextField [(ngModel)] = "user.password" row="2" hint="Password" secure="true">
+  </TextField>
+  
+  <Button (tap)="submit()" row="3" [text]="isLogginIn ? 'Sign in' : 'Sign up'" class="submit-button"></Button>
+  <Button (tap)="toggleDisplay()" row="4" [text]="isLogginIn ? 'Sign up' : 'Back to login'"></Button>
+</GridLayout>
